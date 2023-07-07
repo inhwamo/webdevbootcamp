@@ -19,4 +19,8 @@ for (let h1 of h1s) {
 function colorize() {
     this.style.backgroundColor = makeRandColor();
     this.style.color = makeRandColor();
-}
+}   
+
+window.addEventListener('keydown', function (e) {
+    console.log(e.code);
+})
