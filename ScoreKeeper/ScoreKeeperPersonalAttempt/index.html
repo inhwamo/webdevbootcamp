@@ -5,41 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ping Pong Score Keeper</title>
     <style>
-        img {
-            margin: auto;
-            width: 50%;
+        /* .winner {
+            color: green;
         }
-        :root {
-            margin: auto;
-            width: 50%;
-        }
+        .loser {
+            color: red;
+        } */
+
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- https://bulma.io/documentation/overview/start/ -->
 </head>
 <body>
-    <img src="pingpongphoto.avif" alt="photo of pingpong paddles">
-    <h2>Ping Pong Score Keeper</h2>
-    <br>
-    <h1 id = "scoreKeeper">
-        <span id = "p1ScoreDisplay">0</span> to 
-        <span id = "p2ScoreDisplay">0</span>
-      </h1>
-  
-    <div><span>Playing to </span>
-        <select id = "playto">
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-        </select>
+    <section class="section">
+    <div class="container">
+        <div class="columns">
+            <!-- https://bulma.io/documentation/columns/sizes/ -->
+            <div class="column is-half is-offset-one-quarter">
+                 <!-- Card copied from https://bulma.io/documentation/components/card/#:~:text=Copy-,Examples,-%23 -->
+
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-2by1">
+                            <img src="pingpongphoto.avif" alt="photo of pingpong paddles">
+                        </figure>
+                    </div>
+                    <header class="card-header">
+                      <p class="card-header-title">
+                        Ping Pong Score Keeper
+                      </p>
+                      <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </header>
+
+                    <div class="card-content">
+                      <div class="content">
+                        <h1 class = "title is-1"scoreKeeper">
+                            <span id = "p1ScoreDisplay">0</span> to 
+                            <span id = "p2ScoreDisplay">0</span>
+                        </h1>
+                        <!-- https://bulma.io/documentation/form/select/#:~:text=Copy-,Styles,-%23 -->
+                        <div class="select is-rounded">
+                            <select id = "playto">
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+                    <footer class="card-footer">
+                        <button id = p1 class="is-primary button card-footer-item">+1 Player One</button>                        
+                        <button id = p2 class="is-info button card-footer-item">+1 Player Two</button>
+                        <button id = reset class="is-danger button card-footer-item">Reset</button>
+                    </footer>
+                  </div>
+            </div>
+        </div>
     </div>
-    <button id = p1>+1 Player One</button>
-    <button id = p2>+1 Player Two</button>
-    <button id = reset>Reset</button>
+    
+    </section>
+    
     <script src = "app.js"></script>
 </body>
 </html>

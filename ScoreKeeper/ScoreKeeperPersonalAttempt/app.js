@@ -10,13 +10,15 @@ const p2ScoreDisplay = document.querySelector('#p2ScoreDisplay');
 
 let p1Score = 0;
 let p2Score = 0;
+//let isGameOver = false; 
+
 p1Button.addEventListener('click', function () {
-    if (p1Score < winningScore) {
+    if (p1Score < winningScore) { //if (!isGameOver)
         p1Score += 1;
         p1ScoreDisplay.textContent = p1Score;
         if (p1Score === winningScore) {
-            p1ScoreDisplay.style.color = 'green';
-            p2ScoreDisplay.style.color = 'red';
+            p1ScoreDisplay.classList.add('has-text-success');
+            p2ScoreDisplay.classList.add('has-text-danger');
             p1Button.disabled = true;
             p2Button.disabled = true;
         }
@@ -28,15 +30,15 @@ p2Button.addEventListener('click', function () {
         p2Score += 1;
         p2ScoreDisplay.textContent = p2Score;
         if (p2Score === winningScore) {
-            p1ScoreDisplay.style.color = 'red';
-            p2ScoreDisplay.style.color = 'green';
+            p1ScoreDisplay.classList.add('has-text-danger');
+            p2ScoreDisplay.classList.add('has-text-success');
             p1Button.disabled = true;
             p2Button.disabled = true;
         }
     }
 })
 winningScoreElement.addEventListener('change', function () {
-    winningScore = Number(winningScoreElement.value);
+    winningScore = Number(winningScoreElement.value); //Number() stricter than ParseInt()
 
 })
 resetButton.addEventListener('click', function () {
@@ -44,8 +46,12 @@ resetButton.addEventListener('click', function () {
     p2Score = 0;
     p1ScoreDisplay.textContent = p1Score;
     p2ScoreDisplay.textContent = p2Score;
-    p1ScoreDisplay.style.color = 'black';
-    p2ScoreDisplay.style.color = 'black';
+    p1ScoreDisplay.classList.remove('has-text-success', 'has-text-danger');
+    p2ScoreDisplay.classList.remove('has-text-success', 'has-text-danger');
     p1Button.disabled = false;
     p2Button.disabled = false;
 })
+
+// function reset(){
+
+// }
